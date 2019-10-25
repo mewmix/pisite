@@ -1,0 +1,192 @@
+:root {
+	--malachite: #0cca4a;
+	--deep-violet: #4a0d67;
+	--snow: #fcfafa;
+	--imperial: #5a2374;
+	--gunmetal: #292f36;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: var(--snow);
+	color: var(--gunmetal);
+}
+.flex-element {
+	display: flex;
+}
+section {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	z-index: 1;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	font-family: "Montserrat", sans-serif;
+}
+.header {
+	position: fixed;
+	width: 100%;
+	background-color: var(--deep-violet);
+	color: var(--snow);
+	padding: 0.8rem 0.3rem;
+	justify-content: space-between;
+	align-items: center;
+}
+.header-navlink,
+.header-brand {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: inherit;
+	letter-spacing: 2px;
+	transition: 0.3s;
+}
+.menu {
+	display: flex;
+	top: 0;
+	right: 0;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	align-items: center;
+	height: 0%;
+	width: 0%;
+	position: fixed;
+	background: var(--gunmetal);
+	z-index: 1;
+	opacity: 0.94;
+	transition: 0.42s;
+	overflow: hidden;
+}
+.menu--show .header-navlink {
+	font-size: 3.25rem;
+	opacity: 1;
+	z-index: 2;
+}
+.menu--toggle {
+	flex-flow: column wrap;
+	justify-content: space-around;
+	align-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	padding: 0.5rem 0;
+	margin: -3px 0;
+	cursor: pointer;
+	transition: 0.3s;
+	z-index: 5;
+}
+.menu--toggle:hover {
+	background: var(--imperial);
+}
+.hamburger {
+	width: 5px;
+	height: 5px;
+	margin-bottom: 1px;
+	border-radius: 50%;
+	background: var(--snow);
+	z-index: 2;
+	transform-origin: center;
+	transition: transform 0.3s cubic-bezier(0.88, 0.1, 0.1, 1.2),
+		background 0.3s cubic-bezier(0.88, 0.1, 0.1, 1.2), opacity 0.6s ease;
+}
+
+.cross--toggle {
+	flex-flow: unset;
+	justify-content: center;
+}
+.menu--toggle .cross {
+	width: 3px;
+	height: 25px;
+	border-radius: 0;
+	z-index: 2;
+	background: var(--malachite);
+}
+.menu--toggle .cross-left {
+	width: 3px;
+	height: 25px;
+	border-radius: 0;
+	transform: rotate(45deg) translate(0, -1px);
+}
+.menu--toggle .cross-right {
+	transform: rotate(-45deg) translate(0, -1px);
+}
+.menu--show {
+	height: 100%;
+	width: 100%;
+}
+@media (min-width: 600px) {
+	.menu .header-navlink,
+	.header-brand {
+		padding: 0.3rem 1rem;
+		font-size: 1rem;
+	}
+	.header-navlink:hover,
+	.header-brand:hover {
+		opacity: 0.8;
+	}
+	.menu {
+		height: 1rem;
+		width: 100%;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		position: unset;
+		background: inherit;
+	}
+	.menu--toggle {
+		display: none;
+	}
+	
+	.telegram-button{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    height: 20px;
+    box-sizing: border-box;
+    
+    cursor: pointer;
+    background-color:var(--deep-violet);
+    border-radius: 10px;
+    padding: 3px 10px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.telegram-button:hover{
+    background-color:var(--deep-violet);
+}
+
+.telegram-button:active{
+    background-color:var(--deep-violet);
+}
+
+.telegram-button i{
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    vertical-align: middle;
+    margin-right: 2px;
+    
+    background: url('https://telegram.org/img/oauth/tg_button_small.png') no-repeat;
+    background-size: contain;
+}
+
+.telegram-button span{
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+}
